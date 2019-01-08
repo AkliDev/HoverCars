@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Dreamteck.Splines;
 
 [RequireComponent(typeof(CarHoverHandler))]
 [RequireComponent(typeof(CarBehaviour))]
@@ -23,7 +22,6 @@ public class CarManager : MonoBehaviour
     private CarHoverHandler _HoverHandler; // Script that handles the hover height of the car using the PID controller and the calculates the orientation of the car.
     private CarBehaviour _Behaviour; // The Cars statemachine to control the cars behaviour.
     private PlayerInputs _Inputs; // Handles the players input to control the car.
-    private SplineProjector _Projector; //Projects Transform onto splinecomputer;
     private CarParticleHandler _ParticleHandler; //Handles particles of the car;
     private CarAudioHandler _CarAudioHandler; //Handles SFX of the car;
     private GetVertexPositionsOfBoxCollider _ColliderVertices;
@@ -82,7 +80,6 @@ public class CarManager : MonoBehaviour
     public CarHoverHandler CarHoverHandler { get { return _HoverHandler; } }
     public CarBehaviour Behaviour { get { return _Behaviour; } }
     public PlayerInputs Inputs { get { return _Inputs; } }
-    public SplineProjector Projector { get { return _Projector; } }
     public CarParticleHandler ParticleHandler { get { return _ParticleHandler; } }
     public CarAudioHandler CarAudioHandler { get { return _CarAudioHandler; } }
     public GetVertexPositionsOfBoxCollider ColliderVertices { get { return _ColliderVertices; } }
@@ -226,7 +223,6 @@ public class CarManager : MonoBehaviour
         _HoverHandler = GetComponent<CarHoverHandler>();
         _Behaviour = GetComponent<CarBehaviour>();
         _Inputs = GetComponent<PlayerInputs>();
-        _Projector = GetComponent<SplineProjector>();
         _ParticleHandler = GetComponent<CarParticleHandler>();
         _CarAudioHandler = GetComponent<CarAudioHandler>();
         _ColliderVertices = GetComponent<GetVertexPositionsOfBoxCollider>();
